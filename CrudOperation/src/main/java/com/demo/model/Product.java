@@ -1,25 +1,17 @@
 package com.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-
+import jakarta.persistence.*;
+import lombok.Data;
 @Entity
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String name;
-    
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
-    
-    // Getters and Setters
+    private Double price;
+
     public Long getId() {
         return id;
     }
@@ -36,6 +28,19 @@ public class Product {
         this.name = name;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)  // Ensure the category_id is not null
+    private Category category;
+
+    // Getters and setters
     public Category getCategory() {
         return category;
     }

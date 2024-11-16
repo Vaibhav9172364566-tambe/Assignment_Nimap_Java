@@ -1,0 +1,7 @@
+package com.demo.category;
+
+public class Category {
+
+	private Integer id;
+	private String name;
+}

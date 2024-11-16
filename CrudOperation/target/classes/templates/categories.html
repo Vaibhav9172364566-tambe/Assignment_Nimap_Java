@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+</head>
+<body>
+    <h1>Categories</h1>
+    <div id="categories"></div>
+    <script>
+        fetch('http://localhost:8080/api/categories?page=0')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('categories');
+                data.content.forEach(category => {
+                    container.innerHTML += `<p>${category.name}</p>`;
+                });
+            });
+    </script>
+</body>
+</html>

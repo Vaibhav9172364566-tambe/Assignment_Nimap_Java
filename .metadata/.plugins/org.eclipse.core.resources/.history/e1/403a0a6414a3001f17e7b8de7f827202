@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operation</title>
+
+    <!-- Link to Bootstrap CSS from WebJars -->
+    <link rel="stylesheet" type="text/css" href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+</head>
+<body>
+
+    <div class="container text-center">
+        <h1>Welcome to this page </h1>
+    </div>
+	<div class="p-2">
+		<a class="h2" th:href="@{/categories}">List Categories</a>
+
+	</div>
+	<div class="p-2">
+		<a class="h2" th:href="@{/categories/new}">Create Categories</a>
+
+	</div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+</body>
+</html>
